@@ -1,0 +1,67 @@
+body, html {
+min-height: 100%;
+}
+
+body {
+	background-image: url('books.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+#nav-list {
+	width: 600px;
+	text-align: center;
+	margin: auto;
+}
+li{
+	list-style-type: none;
+	display: inline-block;
+	padding: 0.3em;
+	border: solid 2px rgba(255, 255, 255, 0.95);
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 5px;
+	margin: 150px 0px 2px 0px;
+	font-size: 1.6em;
+	font-family: 'Amatic SC', cursive;
+	font-weight: bolder;
+}
+.panel{
+	background: rgba(255, 255, 255, 0.9);
+	border: solid 2px rgba(255, 255, 255, 0.95);
+	border-radius: 5px;
+	margin: auto;
+	padding: 0.5em;
+	max-width: 600px;
+	width: 550px;
+
+}
+
+h1{
+	text-align: center;
+	font-size: 1.8em;
+	font-family: 'Amatic SC', cursive;
+}
+input, select {
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2em;
+	padding: 0.5em;
+	margin: 0.15;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+h2 {
+	text-align: center;
+	font-size: 1.6em;
+	font-family: 'Amatic SC', cursive;
+}
+.naslov{
+	color: white;
+	margin:  3px 1px 1px 1px;
+}
+#naslov {
+	font-size: 4em;
+}
+#add, #sub {
+	margin: 10px 1px 5px 1px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Address book</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src='script.js'></script>
+
+</head>
+<body>
+	<h1 class="naslov" id='naslov'>Address book</h1>
+	<h2 class="naslov">by banks</h2>
+
+	<div id='nav-bar'>
+		<ul id='nav-list'>
+			<li id='js-search'>Search</li>
+			<li id='js-add-new-contact'>Add new contact</li>
+			<li id='js-show-all-contacts'>Show all contacts</li>
+		</ul>	
+	</div>
+	<div class='panel' id='search-panel'>
+		<h1>Search contacts</h1>
+		<form id='search' action='#'>
+			<div id='results'></div>
+			<div>
+				<input type="text" name="search" class='search' placeholder="Enter first or laste name of contact">
+			</div>
+			<div id='sub'>
+			<input type="button" name="Search" id='search-button' value="Search">
+			</div>
+		</form>	
+	</div>
+
+	<div class='panel' id='add-panel'>
+		<form id='contact' action='#'>
+			<h1>Add new contact</h1>
+			<div>
+				<input type="text" id="firstname" placeholder="First Name">
+				<input type="text" id="lastname" placeholder="Last Name">
+				<input type="text" id="phone" placeholder="041/666222">
+				<input type="text" id="email" placeholder="contactemail@mailbox.com">
+				<input type="text" id="address" placeholder="Western road 3b">
+				<select id='affiliate'>
+					<option value="family">Family</option>
+					<option value="friend">Friend</option>
+					<option value="colleague">Colleague</option>
+					<option value="acquaintance">Acquaintance</option>
+				</select>
+			</div>
+			<div>
+				<input type="button" value="Add" id='add'>
+			</div>
+		</form>
+	</div>
+	<div class='panel' id='show-panel'>
+		<h2>Contacts</h2><hr>
+	</div>
+</body>
+</html>
