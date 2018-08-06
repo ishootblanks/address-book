@@ -18,19 +18,24 @@ const addContact = (firstname, lastname, phone, email, address, affiliate) => {
 };
 
 $(document).ready(function() {
+	$(':input#add').attr('disabled', true);
+	$(':input#email').keyup(function(){
+		if($(this).val().length !==0) {
+					$(":input#add").attr('disabled', false);}
+		else {
+			$(":input#add").attr('disabled', true);}
+	});
 	$(":input#add").on('click', function(){
 		firstname = $(":input#firstname").val();
+		firstname = firstname.charAt(0).toUpperCase() + firstname.slice(1);
 		lastname = $(":input#lastname").val();
+		lastname = lastname.charAt(0).toUpperCase() + lastname.slice(1);
 		phone = $(":input#phone").val();
 		email = $(":input#email").val();
 		address = $(":input#address").val();
 		affiliate = $("select#affiliate").val();
 
-		console.log(firstname, lastname, phone, email, address, affiliate);
-
 		addContact(firstname, lastname, phone, email, address, affiliate);
-
-		console.log(addressBook);
 
 		$('#show-panel').append("<div id="+addressBook[addressBook.length-1].email+"> <p> First name: " + addressBook[addressBook.length-1].firstname 
 			+ "</p> <p> Last name: " + addressBook[addressBook.length-1].lastname 
@@ -54,11 +59,20 @@ $(document).ready(function() {
 		$(':input#email').val('');
 		$(':input#address').val('');
 
+		$(':input#add').attr('disabled', true);
+		$(':input#email').keyup(function(){
+			if($(this).val().length !==0) {
+				$(":input#add").attr('disabled', false);}
+			else {
+				$(":input#add").attr('disabled', true);}
+	});
+
 	});
 
 	$(':button#search-button').on('click', function(){
 		$('.matched').remove();
 		let searchBox = $(":input#search-input").val();
+		searchBox = searchBox.charAt(0).toUpperCase() + searchBox.slice(1);
 		let isMatched = false;
 		addressBook.map(contact => {
 			if ((contact.firstname == searchBox) || (contact.lastname == searchBox)){
@@ -92,6 +106,14 @@ $(document).ready(function() {
 		$('#search-panel').hide();
 		$('#add-panel').hide();
 		$('#show-panel').show();
+	});
+
+	// solution for input reseting form on enter
+	
+	$(':input#search-input').keypress(function(event) {
+   if (event.keyCode == '13') {
+       event.preventDefault();
+   	}
 	});
 });
 
