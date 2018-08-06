@@ -58,11 +58,12 @@ $(document).ready(function() {
 
 	$(':button#search-button').on('click', function(){
 		$('#matched').remove();
-		let searchBox = $(":input.search").val();
+		let searchBox = $(":input#search-input").val();
 		let isMatched = false;
 		addressBook.map(contact => {
 			if ((contact.firstname == searchBox) || (contact.lastname == searchBox)){
 				isMatched = true;
+				$(":input#search-input").val('');
 				$("#search-panel").append("<div id='matched'> <p>First name: " + contact.firstname 
 					+ "</p> <p>Last name: " + contact.lastname 
 					+ "</p> <p>Phone: " + contact.phone 
@@ -70,6 +71,7 @@ $(document).ready(function() {
 					+ "</p> <p>Address: " + contact.address 
 					+ "</p> <p>Affiliation: " + contact.affiliate 
 					+ "</p> <hr> </div> " );
+
 			};
 		});
 
